@@ -35,7 +35,7 @@ let flipped = []; // Tableau d'état des cartes (0 = face cachée, 1 = trouvée)
 // Fonction pour démarrer une nouvelle partie
 export function startGame() {
   document.getElementById("game").innerHTML = "";
-  setupBoard(boardSize.value);
+  setupBoard(boardSize.value - boardSize.value%2);
 }
 
 // Prépare le plateau de jeu avec un nombre de cartes donné (par défaut 18)
