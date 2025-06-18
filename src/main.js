@@ -1,24 +1,21 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import "./style.css";
+import Logo from "/images/logo.png";
+import start from "/images/start.png";
+import { startGame } from "./game.js";
+// import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
+document.querySelector("#app").innerHTML = `
   <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+    
+    <figure>
+      <img src="${Logo}" class="logo" alt="logo" />
+  </figure>
 
-setupCounter(document.querySelector('#counter'))
+    <div id="game">
+      <img src="${start}" id="start" class="start" alt="demarrer" />
+    </div>
+
+  </div>
+`;
+
+document.getElementById("start").addEventListener("click", startGame);
